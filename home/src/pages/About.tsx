@@ -1,6 +1,6 @@
 import React from "react";
 
-const myHobbies = [
+const myHobbies: { src: string; text: string; altText: string }[] = [
   {
     src: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/bicycle_1f6b2.png",
     text: "fährt gerne Rennvelo.",
@@ -23,7 +23,7 @@ const myHobbies = [
   },
 ];
 
-const cv = [
+const cv: { yearStart: string; yearEnd: string; work: string }[] = [
   {
     yearStart: "2022",
     yearEnd: " ",

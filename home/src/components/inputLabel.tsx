@@ -1,9 +1,22 @@
-export { TextInput };
-function TextInput({ lableName, name, placeholder, required, onChange }) {
+type inputProps = {
+  labelName: string;
+  name: string;
+  placeholder: string;
+  required: boolean;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+export function TextInput({
+  labelName,
+  name,
+  placeholder,
+  required,
+  onChange,
+}: inputProps) {
   return (
     <div className="flex flex-col justify-center items-center">
       <label className="w-96 h-10 text-start text-xl text-slate-450">
-        {lableName}
+        {labelName}
       </label>
       <input
         className={

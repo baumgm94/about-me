@@ -1,8 +1,8 @@
 import emailjs from "emailjs-com";
 import * as React from "react";
-import { TextInput } from "./components/inputLabel.js";
-import { SubmitButton } from "./components/button.js";
-import { TextArea } from "./components/textarea.js";
+import { TextInput } from "../components/inputLabel";
+import { SubmitButton } from "../components/button";
+import { TextArea } from "../components/textarea";
 
 function Contact() {
   //const form = React.useRef();
@@ -13,13 +13,11 @@ function Contact() {
     comment: "",
   });
 
-  function changeHandler(e) {
-    console.log(allValues);
-    console.log(e);
+  function changeHandler(e: any) {
     return setAllValues({ ...allValues, [e.target.name]: e.target.value });
   }
 
-  function sendEmail(e) {
+  function sendEmail(e: any) {
     e.preventDefault();
 
     emailjs
@@ -36,7 +34,6 @@ function Contact() {
         },
         (error) => {
           console.log(error.text);
-          alert("FAILED...!", error);
         }
       );
     e.target.reset();
@@ -48,42 +45,44 @@ function Contact() {
         Contact Form
       </h2>
       <TextInput
-        lableName="Firstname"
+        labelName="Firstname"
         name="firstName"
         placeholder="Max"
         required
         onChange={changeHandler}
       />
       <TextInput
-        lableName="Lastname"
+        labelName="Lastname"
         name="lastName"
         placeholder="Muster"
         required
         onChange={changeHandler}
       />
       <TextInput
-        lableName="E-Mail"
+        labelName="E-Mail"
         name="eMail"
         placeholder="default@gmail.com"
         required
         onChange={changeHandler}
       />
       <TextInput
-        lableName="Mobile"
+        labelName="Mobile"
         name="mobile"
         placeholder="+41"
+        required={false}
         onChange={changeHandler}
       />
       <TextInput
-        lableName="Mobile"
+        labelName="Mobile"
         name="mobile"
         placeholder="+41"
+        required={false}
         onChange={changeHandler}
       />
       <TextArea
-        fieldName="Comment"
+        labelName="Comment"
         name="comment"
-        placeHolder="Leave a comment ..."
+        placeholder="Leave a comment ..."
         onChange={changeHandler}
       />
       <SubmitButton buttonName="Submit" />

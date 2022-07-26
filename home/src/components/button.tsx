@@ -1,5 +1,7 @@
-export { SubmitButton };
-function SubmitButton({ buttonName }) {
+type buttonN = {
+  buttonName: string;
+};
+export function SubmitButton({ buttonName }: buttonN) {
   return (
     <div className="flex justify-center items-start">
       <button
